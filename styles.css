@@ -117,6 +117,8 @@ img{ display:block; max-width:100%; }
   border-radius: 999px;
   padding: 10px 12px;
   box-shadow: var(--shadow);
+  position: relative;
+  z-index: 1000;
 }
 
 .brand{
@@ -759,9 +761,9 @@ img{ display:block; max-width:100%; }
   .nav__toggle{ display: inline-block; }
   .nav__links{
     position: absolute;
-    right: 4%;
-    left: 4%;
-    top: 64px;
+    right: 0;
+    left: 0;
+    top: calc(100% + 10px);
     display:none;
     flex-direction: column;
     gap: 8px;
