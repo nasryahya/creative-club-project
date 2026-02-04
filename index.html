@@ -484,6 +484,12 @@
       const open = navLinks.classList.toggle("open");
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
+    document.addEventListener("click", (e) => {
+      if (!navLinks.classList.contains("open")) return;
+      if (navToggle.contains(e.target) || navLinks.contains(e.target)) return;
+      navLinks.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
 
     // Smooth scroll + active on click
     const links = Array.from(document.querySelectorAll(".nav__link"))
@@ -571,7 +577,6 @@
   </script>
 </body>
 </html>
-
 
 
 
